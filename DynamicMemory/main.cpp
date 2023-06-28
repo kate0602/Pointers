@@ -4,6 +4,9 @@ using namespace std;
 void FillRand(int arr[], const int n);
 void Print(int arr[], const int n);
 
+int*push_back(int arr[], int &n, int value);
+
+
 void main()
 {
     setlocale(LC_ALL, "");
@@ -13,6 +16,14 @@ void main()
 
 	FillRand(arr, n);
 	Print(arr, n);
+	
+    int value;
+	cout << "¬ведите добавл€емое значение: "; cin >> value;
+
+	arr = push_back(arr, n, value);
+
+	Print(arr, n);
+	delete[] arr;
 
 }
 
@@ -32,4 +43,32 @@ void Print(int arr[], const int n)
 
 	}
 	cout << endl;
+}
+
+int* push_back(int arr[], int &n, int value)
+{
+	//—оздаем буферный массив нужного размера
+	int* buffer = new int[n + 1];
+
+	//копируем значени€ из исходного массива
+	for (int i = 0; i < n; i++)
+	{
+		buffer[i] = arr[i];
+
+	}
+	// ”дал€ем массив
+	delete[] arr;
+
+	//ѕодмен€ем адрес старого новым массивом
+
+	arr = buffer;
+
+	//только после этого можно добавить значение:
+	arr[n] = value;
+
+	//"“олько после этого в массив arr, можно добавить значение.
+	n++;
+	// ¬озвращаем новый массив.
+
+	return arr;
 }
