@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 using namespace std;
 
 void FillRand(int arr[], const int n);
@@ -13,7 +13,7 @@ void main()
 	FillRand(arr, n);
 	Print(arr, n);
 
-	//Вычисляем размер массива
+	//Р’С‹С‡РёСЃР»СЏРµРј СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°
 
 	int even_count = 0;
 	int odd_count = 0;
@@ -22,25 +22,25 @@ void main()
 		if (arr[i] % 2 == 0)even_count++;
 		else odd_count++;
 	}
-	// Выделяем память для четных и нечетных элементов:
+	// Р’С‹РґРµР»СЏРµРј РїР°РјСЏС‚СЊ РґР»СЏ С‡РµС‚РЅС‹С… Рё РЅРµС‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ:
 
 	int* even_arr = new int[even_count];
 	int* odd_arr = new int[odd_count];
 
 
 
-	// Копируем четные и нечетные элементы 
+	// РљРѕРїРёСЂСѓРµРј С‡РµС‚РЅС‹Рµ Рё РЅРµС‡РµС‚РЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ 
 	
 	for (int i = 0, j = 0, k = 0; i < n; i++)
 	{
 		if (arr[i] % 2 == 0)even_arr[j++] = arr[i];
 		else odd_arr[k++] = arr[i];
 	}
-	// Выводин результат на экран
+	// Р’С‹РІРѕРґРёРЅ СЂРµР·СѓР»СЊС‚Р°С‚ РЅР° СЌРєСЂР°РЅ
 	Print(even_arr, even_count);
 	Print(odd_arr, odd_count);
 
-	// Удаляем динамические массивы
+	// РЈРґР°Р»СЏРµРј РґРёРЅР°РјРёС‡РµСЃРєРёРµ РјР°СЃСЃРёРІС‹
 
 	delete[] odd_arr;
 	delete[] even_arr;
